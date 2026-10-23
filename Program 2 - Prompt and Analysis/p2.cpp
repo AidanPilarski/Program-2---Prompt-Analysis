@@ -36,7 +36,7 @@ int main()
 
    
    // start off with a "full" queue
-   for (int i = 0; i < 10; i++)
+   for (int i = 0; i < 10; ++i)
    {
       request r = (createRandomRequest());
       lb.addRequest(r); 
@@ -45,9 +45,9 @@ int main()
    
    // an array of webservers, each given an initial request to process
    webserver webarray[NUM_SERVERS];
-   for (int i = 0; i < NUM_SERVERS; i++)
+   for (int i = 0; i < NUM_SERVERS; ++i)
    {
-      webserver w((char)(i + 65));
+      webserver w( (char) (i + 65) );
       webarray[i] = w;
       webarray[i].addRequest(lb.getRequest(),lb.getTime());
 

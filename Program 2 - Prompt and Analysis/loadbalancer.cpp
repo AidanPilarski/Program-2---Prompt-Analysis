@@ -12,7 +12,7 @@ int loadbalancer::getTime()
 
 void loadbalancer::incTime()
 {
-   systemTime++;
+   systemTime ++;
 
 }
   
@@ -28,7 +28,8 @@ request loadbalancer::getRequest()
    incTime();
    if (!requestQueue.empty())
    {
-      request r = requestQueue.front();
+      request r = requestQueue.front(); //queue
+      // request r = requestQueue.top(); // priority_queue, stack
       requestQueue.pop();
       return r;
    }
